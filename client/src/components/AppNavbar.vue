@@ -1,7 +1,7 @@
 <template>
   <div class="navigation">
     <ul class="nav-menu">
-      <li>About</li>
+      <router-link :to="{ path: 'about' }"><li>About</li></router-link>
       <li>Projects</li>
       <li>News</li>
       <li>Media</li>
@@ -31,6 +31,14 @@ export default {
   text-align: left;
   color: white;
   padding-top: 20px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+}
+
+.nav-menu a:visited {
+  color: white;
 }
 
 .nav-menu li {
