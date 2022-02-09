@@ -9,7 +9,7 @@ import AppNavbar from './components/AppNavbar.vue'
 export default {
   name: 'App',
   components: { 
-    AppNavbar
+    AppNavbar,
   },
   data: function () {
     return {
@@ -20,8 +20,14 @@ export default {
 </script>
 
 <style>
+@font-face {
+  font-family: "Questrial";
+  src: local("Questrial"),
+   url(./fonts/Questrial-Regular.ttf) format("truetype");
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Playfair Display, serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

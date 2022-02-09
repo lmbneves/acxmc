@@ -4,4 +4,8 @@ import router from './router'
 
 import './assets/css/main.css'
 
-createApp(App).use(router).mount('#app')
+var app = createApp(App)
+
+app.use(router)
+
+app.mount('#app')
