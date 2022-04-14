@@ -3,7 +3,7 @@
   <div class="download-links">
     <a href="/Abagael Cheng Résumé - February 2022.pdf" download>Download résumé</a>
     <a href="/Abagael Cheng Headshot.jpeg" download>Download headshot</a>
-    <!-- <a href="/Abagael Cheng Bio.pdf" download>Bio</a> -->
+    <a href="/Abagael Cheng Bio.pdf" download>Download bio</a>
   </div>
   <swiper
     :modules="modules"
