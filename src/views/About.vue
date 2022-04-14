@@ -1,31 +1,50 @@
 <template>
 <div class="about-page">
-  <div class="slide-container">
-    <div 
+  <swiper
+    :modules="modules"
+    :slides-per-view="1"
+    :pagination="{ clickable: true }"
+    :space-between="50"
+    @swiper="onSwiper"
+    @slideChange="onSlideChange"
+  >
+    <swiper-slide 
       v-for="(section, index) in sections" 
-      :key="section.name"
+      :key="section.name" 
       class="slide"
-      :class=" index === 0 ? 'active-slide' : 'hidden-slide' "
-      :ref="`${section.name}`"
+      :class="`slide-${section.name}`"
     >
-      <div class="as-img__wrapper">
-        <img :src="require('@/assets/images/' + photos[index])" class="as-img">
+      <div class="slide-container">
+        <div class="about-image__wrapper">
+          <img :src="require('@/assets/images/' + photos[index])" class="about-image" />
+        </div>
+        <div class="about-content__wrapper">
+          <h2>{{ section.statement }}<span style="border-bottom: 1px solid #ddd;">{{ section.name }}</span>.</h2>
+          <p>{{ section.blurb }}</p>
+          <button>Learn more</button>
+        </div>
       </div>
-      <div class="as-content__wrapper">
-        <h2>{{ section.statement }}<span style="border-bottom: 1px solid #ddd;">{{ section.name }}</span>.</h2>
-        <p>{{ section.blurb }}</p>
-        <button>Learn more</button>
-      </div>
-    </div>
-  </div>
+    </swiper-slide>
+    
+  </swiper>
 </div>
 </template>
 
 <script>
+import { Navigation, Pagination } from 'swiper'
+import { Swiper, SwiperSlide } from 'swiper/vue/swiper-vue.js';
+import 'swiper/swiper-bundle.min.css'
+import 'swiper/swiper.min.css'
+import 'swiper/modules/navigation/navigation.min.css'
+import 'swiper/modules/pagination/pagination.min.css'
 import aboutData from '../data/about.json';
 
 export default {
   name: 'About',
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
   data: function () {
     return {
       sections: aboutData,
@@ -39,105 +58,124 @@ export default {
     }
   },
   methods: {
-    handleWheel: function(e) {
-      if (e.deltaY < 0) {
-        this.onWheelUp();
-      } else if (e.deltaY > 0) {
-        e.preventDefault();
-        this.onWheelDown();
-      }
+    onSlideChange() {
+      console.log("slide change");
     },
-    onWheelDown: function() {
-      this.$refs[this.sectionList[this.sectionIdx]][0].classList.add('hidden-slide');
-      this.$refs[this.sectionList[this.sectionIdx]][0].classList.remove('active-slide');
-      this.sectionIdx == 2 ? this.sectionIdx = 0 : this.sectionIdx++;
-      this.$refs[this.sectionList[this.sectionIdx]][0].classList.add('active-slide');
-      this.$refs[this.sectionList[this.sectionIdx]][0].classList.remove('hidden-slide');
-    },
-    onWheelUp: function() {
-      this.$refs[this.sectionList[this.sectionIdx]][0].classList.add('hidden-slide');
-      this.$refs[this.sectionList[this.sectionIdx]][0].classList.remove('active-slide');
-      this.sectionIdx == 0 ? this.sectionIdx = 2 : this.sectionIdx--;
-      this.$refs[this.sectionList[this.sectionIdx]][0].classList.add('active-slide');
-      this.$refs[this.sectionList[this.sectionIdx]][0].classList.remove('hidden-slide');
-    },
+    handleScroll() {
+      console.log("side scroll")
+    }
   },
-  mounted: function() {
-    window.addEventListener("wheel", this.handleWheel, { passive: false });
+  setup() {
+    const onSwiper = (swiper) => {
+      console.log(swiper);
+    };
+    return {
+      onSwiper,
+      modules: [Navigation, Pagination],
+    };
   },
-  unmounted: function() {
-    window.removeEventListener("wheel", this.handleWheel);
-  }
+  created () {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  unmounted () {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
 }
 </script>
 
-
-<style lang="scss" scoped>
+<style lang="scss">
 .about-page {
   width: 100%;
   height: 100vh;
   position: relative;
   background-color: #221a17;
+  color: $timberwolf;
+}
+
+.swiper {
+  height: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: $timberwolf;
 }
 
 .slide-container {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-}
-
-.slide {
   width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: row;
   align-items: stretch;
   position: absolute;
+  text-align: left;
 }
 
-.active-slide {
-  visibility: inherit;
+.slide-performer {
+  color: $timberwolf;
+
+  background-color: #221a17;
 }
 
-.hidden-slide {
-  visibility: hidden;
+.slide-athlete {
+  color: $shark-blue;
+  font-weight: bold;
+
+  background-color: $timberwolf;
+  background-image: url('~@/assets/images/abby-athlete.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
+  background-position: top left;
+
+  .about-image { display: none; }
 }
 
-.as-img__wrapper {
+.slide-model {
+  color: $shark-blue;
+
+  background-color: white;
+  background-image: url('~@/assets/images/abby-model.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
+  background-position: center;
+
+  .about-image { display: none; }
+}
+
+.about-image__wrapper {
   height: 100%;
-  width: 50%;
+  width: 45%;
   text-align: right;
 }
 
-.as-img__wrapper::after {
+.about-image__wrapper::after {
   content: "";
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  -webkit-box-shadow: inset 0 0 18px 12px #221a17;
-  box-shadow: inset 0 0 18px 12px #221a17;
+  // -webkit-box-shadow: inset 0 0 18px 12px #221a17;
+  // box-shadow: inset 0 0 18px 12px #221a17;
 }
 
-.as-img {
+.about-image {
   height: 100%;
 }
 
-.as-content__wrapper {
+.about-content__wrapper {
   flex: 1;
-  padding: 0px 100px;
+  padding: 0px 50px;
 
   h2 {
-    color: $timberwolf;
-    font-family: "Playfair Display Italic";
     padding-top: 250px;
     padding-left: 50px;
   }
 
   p {
-    color: $timberwolf;
-    font-family: "Playfair Display Italic";
     padding: 10px 50px;
   }
   
