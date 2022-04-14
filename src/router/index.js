@@ -4,6 +4,9 @@ import About from "@/views/About.vue";
 import Schedule from "@/views/Schedule.vue";
 import Media from "@/views/Media.vue";
 import Contact from "@/views/Contact.vue";
+import Performer from "@/views/Performer.vue";
+import Athlete from "@/views/Athlete.vue";
+import Model from "@/views/Model.vue";
 
 const routes = [
   {
@@ -30,6 +33,21 @@ const routes = [
     path: "/contact",
     name: "Contact",
     component: Contact,
+  },
+  {
+    path: "/performer",
+    name: "Performer",
+    component: Performer,
+  },
+  {
+    path: "/athlete",
+    name: "Athlete",
+    component: Athlete,
+  },
+  {
+    path: "/model",
+    name: "Model",
+    component: Model,
   },
 ];
 

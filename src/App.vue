@@ -1,7 +1,7 @@
 <template>
   <!-- <LoadingScreen v-if="isLoading" /> -->
-  <AppNavbar v-if="!isLoading" />
-  <router-view v-if="!isLoading"></router-view>
+  <AppNavbar />
+  <router-view></router-view>
 </template>
 
 <script>

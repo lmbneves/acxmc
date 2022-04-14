@@ -4,7 +4,11 @@
       <div class="name-container">
         <h2 class="name-script">abagael cheng</h2>
         <h1 class="name">Abagael Cheng</h1>
-        <h3 class="titles"><span>Performer</span> <span>Athlete</span> <span>Model</span></h3>
+        <h3 class="titles">
+          <router-link :to="{ path: 'performer' }">Performer</router-link> 
+          <router-link :to="{ path: 'athlete' }">Athlete</router-link>
+          <router-link :to="{ path: 'model' }">Model</router-link>
+        </h3>
       </div>
     </div>
   </div>
@@ -35,7 +39,7 @@
 .name-container {
   width: 55%;
   position: absolute;
-  top: 30%;
+  top: 35%;
   right: 0;
   text-align: center;
 }
@@ -60,8 +64,14 @@
   font-size: 18pt;
   margin-top: -25px;
   
-  span {
+  a {
+    color: $shark-blue;
+    text-decoration: none;
     padding: 0px 30px;
+
+    &:visited {
+      color: $shark-blue;
+    }
   }
 }
 </style>
