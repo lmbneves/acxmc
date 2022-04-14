@@ -8,22 +8,20 @@
       :key="`${event.name}${index}`"
       class="schedule-container"
     > 
-      <div 
-        v-for="(date, index) in event.dates" 
-        :key="`${event.name}${date}${index}`"
-        class="event-container"
-      >
+      <div class="event-container">
         <div class="event-date">
-          <h3>{{ date.month }}</h3>
-          <h4>{{ date.day }}</h4>
+          <h3>{{ event.date.month }}</h3>
+          <h4>{{ event.date.day }}</h4>
         </div>
         <div class="event-details">
           <h3>{{ event.title }}</h3>
           <h4>{{ event.venue }}</h4>
           <h4>{{ event.city }}, {{ event.state }}</h4>
         </div>
-        <div class="event-link">
-          <button>Buy tickets</button>
+        <div v-if="event.link" class="event-link">
+          <button>
+            <a :href="event.link" target="_blank">Tickets</a>
+          </button>
         </div>
       </div>
     </div>
@@ -139,6 +137,11 @@ export default {
   button {
     margin-top: 20px;
     background-color: $timberwolf;
+
+    a {
+      color: $shark-blue;
+      text-decoration: none;
+    }
   }
 }
 </style>

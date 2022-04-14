@@ -20,7 +20,7 @@ export default {
       navbarColors: {
         '/' : "#191E23",
         '/about' : "#D3D0CB",
-        '/schedule' : "#D3D0CB",
+        '/schedule' : "#191E23",
         '/contact' : "#D3D0CB",
         '/media': "#D3D0CB"
       }
