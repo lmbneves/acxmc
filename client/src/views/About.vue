@@ -20,8 +20,8 @@
         </div>
         <div class="about-content__wrapper">
           <h2>{{ section.statement }}<span style="border-bottom: 1px solid #ddd;">{{ section.name }}</span>.</h2>
-          <p>{{ section.blurb }}</p>
-          
+          <p v-if="section.description" v-html="section.description" />
+          <p v-else v-html="section.blurb" class="push-middle" />
         </div>
       </div>
     </swiper-slide>
@@ -114,13 +114,11 @@ export default {
 
 .slide-performer {
   color: $timberwolf;
-
   background-color: #221a17;
 }
 
 .slide-athlete {
   color: $shark-blue;
-  font-weight: bold;
 
   background-color: $timberwolf;
   background-image: url('~@/assets/images/abby-athlete.jpg');
@@ -168,10 +166,10 @@ export default {
 
 .about-content__wrapper {
   flex: 1;
-  padding: 0px 50px;
+  padding: 0px 30px;
 
   h2 {
-    padding-top: 250px;
+    padding-top: 40px;
     padding-left: 50px;
   }
 
@@ -184,4 +182,5 @@ export default {
     margin-left: 50px;
   }
 }
+
 </style>
