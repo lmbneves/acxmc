@@ -21,7 +21,7 @@
         <div class="about-content__wrapper">
           <h2>{{ section.statement }}<span style="border-bottom: 1px solid #ddd;">{{ section.name }}</span>.</h2>
           <p>{{ section.blurb }}</p>
-          <button>Learn more</button>
+          
         </div>
       </div>
     </swiper-slide>

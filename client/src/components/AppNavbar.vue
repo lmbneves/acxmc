@@ -22,7 +22,10 @@ export default {
         '/about' : "#D3D0CB",
         '/schedule' : "#191E23",
         '/contact' : "#D3D0CB",
-        '/media': "#D3D0CB"
+        '/media': "#D3D0CB",
+        '/performer' : "#D3D0CB",
+        '/athlete' : "#D3D0CB",
+        '/model' : "#D3D0CB",
       }
     }
   }
