@@ -1,5 +1,10 @@
 <template>
 <div class="about-page">
+  <div class="download-links">
+    <a href="/Abagael Cheng Résumé - February 2022.pdf" download>Download résumé</a>
+    <a href="/Abagael Cheng Headshot.jpeg" download>Download headshot</a>
+    <!-- <a href="/Abagael Cheng Bio.pdf" download>Bio</a> -->
+  </div>
   <swiper
     :modules="modules"
     :slides-per-view="1"
@@ -25,7 +30,6 @@
         </div>
       </div>
     </swiper-slide>
-    
   </swiper>
 </div>
 </template>
@@ -128,6 +132,9 @@ export default {
   background-position: top left;
 
   .about-image { display: none; }
+  h2 {
+    padding-top: 450px !important;
+  }
 }
 
 .slide-model {
@@ -141,6 +148,9 @@ export default {
   background-position: center;
 
   .about-image { display: none; }
+  h2 {
+    padding-top: 250px !important;
+  }
 }
 
 .about-image__wrapper {
@@ -183,4 +193,18 @@ export default {
   }
 }
 
+.download-links {
+  position: absolute;
+  z-index: 200;
+  bottom: 0;
+  padding: 40px 40px;
+
+  a {
+    text-decoration: none;
+    color: $timberwolf;
+    padding: 10px;
+    border: 1px solid $timberwolf;
+    margin-right: 10px;
+  }
+}
 </style>
