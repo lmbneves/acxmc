@@ -32,16 +32,12 @@
   background-image: url('~@/assets/images/acxmc.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: 100%;
+  background-size: cover;
   background-position: center;
 }
 
 .name-container {
-  width: 55%;
-  position: absolute;
-  top: 35%;
-  right: 0;
-  text-align: center;
+  display: none;
 }
 
 .name {
@@ -72,6 +68,20 @@
     &:visited {
       color: $shark-blue;
     }
+  }
+}
+
+@media (min-width: 768px) {
+  .main-image {
+    background-size: 100%;
+  }
+
+  .name-container {
+    width: 55%;
+    position: absolute;
+    top: 35%;
+    right: 0;
+    text-align: center;
   }
 }
 </style>
