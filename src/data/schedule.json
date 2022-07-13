@@ -1,0 +1,54 @@
+[
+  {
+    "title": "Beauty Intolerable",
+    "date": {
+      "day": "27",
+      "month": "April",
+      "year": "2022"
+    },
+    "venue": "FDR Library's Wallace Center",
+    "city": "New York",
+    "state": "NY"
+  },
+  {
+    "title": "Continuing Evolution: Yiddish Folk Song Today",
+    "date": {
+      "day": "18",
+      "month": "May",
+      "year": "2022"
+    },
+    "venue": "YIVO Institute for Jewish Research",
+    "city": "New York",
+    "state": "NY",
+    "link": "https://www.yivo.org/FolksongFestival2"
+  },
+  {
+    "title": "The Final Veil",
+    "date": {
+      "day": "14",
+      "month": "July",
+      "year": "2022"
+    },
+    "additionaldates": [
+      {
+        "day": "15",
+        "month": "July",
+        "year": "2022"
+      },
+      {
+        "day": "16",
+        "month": "July",
+        "year": "2022"
+      },
+      {
+        "day": "17",
+        "month": "July",
+        "year": "2022"
+      }
+    ],
+    "venue": "Nancy Manocherian's The Cell Theatre",
+    "city": "New York",
+    "state": "NY",
+    "link": "https://www.thefinalveilopera.com/"
+  }
+]
