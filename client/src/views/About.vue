@@ -1,9 +1,9 @@
 <template>
 <div class="about-page">
   <div class="download-links">
-    <a href="/Abagael Cheng Résumé - February 2022.pdf" download>Download résumé</a>
-    <a href="/Abagael Cheng Headshot.jpeg" download>Download headshot</a>
-    <a href="/Abagael Cheng Bio.pdf" download>Download bio</a>
+    <a href="/Abagael Cheng Résumé - February 2022.pdf" download><span>RÉSUMÉ</span></a>
+    <a href="/Abagael Cheng Headshot.jpeg" download><span>HEADSHOT</span></a>
+    <a href="/Abagael Cheng Bio.pdf" download><span>BIO</span></a>
   </div>
   <swiper
     :modules="modules"
@@ -204,7 +204,40 @@ export default {
     color: $timberwolf;
     padding: 10px;
     border: 1px solid $timberwolf;
+    border-radius: 20px;
     margin-right: 10px;
+    transition: all 0.5s;
+    cursor: pointer;
+
+    span {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      transition: 0.5s;
+    }
+
+    span:after {
+      content: "";
+      background-image: url('~@/assets/icons/download.png');
+      background-size: 16px 16px;
+      background-repeat: no-repeat;
+      height: 16px;
+      display: inline-block;
+      position: absolute;
+      opacity: 0;
+      transition: 0.5s;
+      top: 3px;
+    }
+
+    &:hover span {
+      padding-right: 20px;
+    }
+
+    &:hover span:after {
+      width: 16px;
+      opacity: 1;
+      right: 0;
+    }
   }
 }
 </style>
