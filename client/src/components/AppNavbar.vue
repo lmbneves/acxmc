@@ -3,24 +3,26 @@
     <div class="logo-container">
       <router-link :to="{ path: '/' }" >axcmc</router-link>
     </div>
-    <div class="x-icon" @click="toggleNavigation">X</div>
-    <div class="mobile-nav" :class="{ 'open-mobile-nav': showNavbar }">
-      <ul class="nav-menu">
-        <li><router-link :to="{ path: 'about' }" >About</router-link></li>
-        <li><router-link :to="{ path: 'schedule' }">Schedule</router-link></li>
-        <li><router-link :to="{ path: 'contact' }">Connect</router-link></li>
-        <li><router-link :to="{ path: 'media' }">Media</router-link></li>
-      </ul>
-    </div>
-    <div class="desktop-nav">
-      <ul class="nav-menu nav-menu-one">
-        <li><router-link :to="{ path: 'about' }" >About</router-link></li>
-        <li><router-link :to="{ path: 'schedule' }">Schedule</router-link></li>
-      </ul>
-      <ul class="nav-menu nav-menu-two">
-        <li><router-link :to="{ path: 'contact' }">Connect</router-link></li>
-        <li><router-link :to="{ path: 'media' }">Media</router-link></li>
-      </ul>
+    <div class="burger">
+      <div class="x-icon" @click="toggleNavigation">X</div>
+      <div class="mobile-nav" :class="{ 'open-mobile-nav': showNavbar }">
+        <ul class="nav-menu">
+          <li><router-link :to="{ path: 'about' }" >About</router-link></li>
+          <li><router-link :to="{ path: 'schedule' }">Schedule</router-link></li>
+          <li><router-link :to="{ path: 'contact' }">Connect</router-link></li>
+          <li><router-link :to="{ path: 'media' }">Media</router-link></li>
+        </ul>
+      </div>
+      <div class="desktop-nav">
+        <ul class="nav-menu nav-menu-one">
+          <li><router-link :to="{ path: 'about' }" >About</router-link></li>
+          <li><router-link :to="{ path: 'schedule' }">Schedule</router-link></li>
+        </ul>
+        <ul class="nav-menu nav-menu-two">
+          <li><router-link :to="{ path: 'media' }">Media</router-link></li>
+          <li><router-link :to="{ path: 'contact' }">Connect</router-link></li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -33,7 +35,7 @@ export default {
       showNavbar: false,
       navbarColors: {
         '/' : "#191E23",
-        '/about' : "#D3D0CB",
+        '/about' : "#191E23",
         '/schedule' : "#191E23",
         '/contact' : "#D3D0CB",
         '/media': "#D3D0CB",
@@ -58,10 +60,10 @@ export default {
 
 <style lang="scss" scoped>
 .navigation-container {
-  position: absolute;
+  position: fixed;
   padding: 15px 20px;
-  left: 0;
   top: 0;
+  left: 0;
   z-index: 10;
   width: 100%;
   box-sizing: border-box;
@@ -75,7 +77,8 @@ export default {
   width: 100%;
   height: 60px;
   margin-top: -60px;
-  text-align: center;
+  padding: 12px;
+  text-align: left;
   
   a { 
     text-decoration: none; 
@@ -87,18 +90,28 @@ export default {
   }
 }
 
+.burger {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 100%;
+}
+
 .x-icon {
   font-family: 'Alcantera Script', sans-serif;
-  -webkit-text-stroke: 1px var(--text-color);
+  -webkit-text-stroke: 2px var(--text-color);
   z-index: 100;
   cursor: pointer;
   width: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
 .open-navbar-overlay {
   width: 100%;
   height: 100vh;
-  background-color: $light-marengo;
+  background-color: $bright-gray;
   opacity: 100%;
   transition: opacity 1s;
 }
@@ -118,6 +131,7 @@ export default {
 
 .open-mobile-nav {
   display: block;
+  padding-left: 15px;
 }
 
 .nav-menu {
@@ -144,6 +158,7 @@ export default {
 
 @media (min-width: 768px) {
   .x-icon {
+    position: initial;
     pointer-events: none;
   }
   .desktop-nav {
@@ -175,16 +190,26 @@ export default {
     }
   }
 
+  .burger {
+    top: 30px;
+    right: 30px;
+  }
+
   .nav-menu-one {
     position: absolute;
-    margin-top: -83px;
-    margin-left: 20px;
+    margin: 0;
+    padding: 0;
+    top: 2px;
+    right: 40px;
   }
 
   .nav-menu-two {
-    transform: rotate(-90deg);
-    margin-top: 35px;
-    margin-left: -87px;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    transform: rotate(90deg);
+    top: 85px;
+    right: -48px;
   }
 }
 </style>

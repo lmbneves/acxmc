@@ -1,7 +1,6 @@
 <template>
   <div class="performer-page">
     <div class="performer-image__wrapper">
-      <img :src="require('@/assets/images/IMG5785.jpg')" class="performer-image" />
     </div>
     <p>
       East Asian American soprano Abagael Cheng is a singing artist who strives to break the boundaries of 
