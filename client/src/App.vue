@@ -27,6 +27,12 @@ export default {
 
 <style lang="scss">
 @font-face {
+  font-family: "Archivo Black";
+  src: local("ArchivoBlack"),
+    url(./fonts/ArchivoBlack.ttf) format("truetype");
+}
+
+@font-face {
   font-family: "PGF Now Regular";
   src: local("PGFNow-Regular"),
     url(./fonts/PGFNow-Regular.otf) format("opentype");
@@ -48,12 +54,6 @@ export default {
   font-family: "Alcantera Script";
   src: local("Alcantera-Script"),
     url(./fonts/Alcantera-Script.ttf) format("truetype");
-}
-
-@font-face {
-  font-family: "Roboto Condensed Bold";
-  src: local("Roboto Condensed Bold"),
-    url(./fonts/RobotoCondensedBold.ttf) format("truetype");
 }
 
 @font-face {

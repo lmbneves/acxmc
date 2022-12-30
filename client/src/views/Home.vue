@@ -2,13 +2,7 @@
   <div class="mainvisual">
     <div class="main-image">
       <div class="name-container">
-        <h2 class="name-script">abagael cheng</h2>
         <h1 class="name">Abagael Cheng</h1>
-        <h3 class="titles">
-          <router-link :to="{ path: 'performer' }">Performer</router-link> 
-          <router-link :to="{ path: 'athlete' }">Athlete</router-link>
-          <router-link :to="{ path: 'model' }">Model</router-link>
-        </h3>
       </div>
     </div>
   </div>
@@ -29,49 +23,53 @@
   left: 0;
   z-index: 5;
 
-  background-image: url('~@/assets/images/acxmc.png');
+  background-image: url('~@/assets/images/acxmc-mobile.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: 100%;
+  background-size: cover;
   background-position: center;
 }
 
 .name-container {
-  width: 55%;
+  width: 100%;
   position: absolute;
-  top: 35%;
-  right: 0;
+  top: 15%;
   text-align: center;
 }
 
 .name {
-  color: $shark-blue;
-  font-family: 'Alcantera Serif';
-  font-size: 80pt;
-  margin-top: -160px;
+  color: white;
+  font-family: 'Archivo Black';
+  font-size: 50pt;
+  line-height: 45pt;
+  text-transform: uppercase;
 }
 
-.name-script {
-  color: $coral;
-  font-family: 'Alcantera Script';
-  font-size: 80pt;
-  word-spacing: 20px;
-}
+@media only screen and (min-width: 768px) {
+  .main-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
 
-.titles {
-  color: $shark-blue;
-  font-family: 'PGF Now Light';
-  font-size: 18pt;
-  margin-top: -25px;
-  
-  a {
-    color: $shark-blue;
-    text-decoration: none;
-    padding: 0px 30px;
-
-    &:visited {
-      color: $shark-blue;
-    }
+    background-image: url('~@/assets/images/acxmc.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+    background-position: center;
+  }
+  .name-container {
+    width: 55%;
+    position: absolute;
+    top: 30%;
+    right: 4%;
+    text-align: right;
+  }
+  .name {
+    font-size: 90pt;
+    line-height: 80pt;
   }
 }
 </style>

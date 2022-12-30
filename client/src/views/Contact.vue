@@ -3,9 +3,9 @@
     <div class="contact-image"></div>
     <div class="contact-content"> 
       <div class="title">
-        <h2>Connect</h2>
+        <h2>Let's<br /><span class="flourish">connect</span></h2>
       </div>
-      <form class="connect__form">
+      <!-- <form class="connect__form">
         <div class="container">
           <div class="row">
             <div class="six columns">
@@ -28,7 +28,7 @@
             </div>
           </div>
         </div>
-      </form>
+      </form> -->
     </div>
   </div>
 </template>
@@ -52,13 +52,11 @@ export default {
 .contact-page {
   width: 100%;
   height: 100vh;
-  position: relative;
   text-align: center;
 
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  position: absolute;
 
   input, textarea {
     background-color: transparent;
@@ -79,25 +77,29 @@ export default {
 }
 
 .contact-image {
-  height: 100vh;
-  width: 40%;
-  margin-bottom: 60px;
-
-  background-image: url('~@/assets/images/abby-connect.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 50%;
-  background-position: top 30% left;
+  display: none;
 }
 
 .contact-content {
   flex: 1;
   overflow-y: scroll;
+  margin-top: 150px;
 }
 
-.title {
-  margin: 0 auto;
-  text-align: center;
+.title { 
+  width: 100%;
+  text-transform: uppercase;
+
+  h2 {
+    font-family: "Archivo Black";
+    font-size: 40pt;
+    line-height: 30pt;
+  }
+
+  .flourish {
+    font-family: "PGF NOW Regular";
+    text-transform: lowercase;
+  }
 }
 
 .connect__form {
@@ -108,4 +110,24 @@ export default {
 .submit {
   float: right;
 }
+
+@media only screen and (min-width: 768px) {
+  .contact-image {
+    display: block;
+    height: 100vh;
+    width: 40%;
+    margin-bottom: 60px;
+
+    background-image: url('~@/assets/images/abby-connect.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 50%;
+    background-position: top 30% left;
+  }
+
+  .title { 
+    display: none;
+  }
+}
+
 </style>

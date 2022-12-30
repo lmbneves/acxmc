@@ -1,13 +1,11 @@
 <template>
-  <div class="navigation-container" :style="'--text-color: ' + this.navbarColors[this.$route.path]">
-    <ul class="nav-menu nav-menu-one">
-      <li><router-link :to="{ path: '/' }" class="home-icon">X</router-link></li>
+  <div class="navigation-container">
+    <ul class="nav-menu">
+      <li><router-link :to="{ path: '/' }">Home</router-link></li>
       <li><router-link :to="{ path: 'about' }" >About</router-link></li>
       <li><router-link :to="{ path: 'schedule' }">Schedule</router-link></li>
-    </ul>
-    <ul class="nav-menu nav-menu-two">
-      <li><router-link :to="{ path: 'contact' }">Connect</router-link></li>
       <li><router-link :to="{ path: 'media' }">Media</router-link></li>
+      <li><router-link :to="{ path: 'contact' }">Connect</router-link></li>
     </ul>
   </div>
 </template>
@@ -17,16 +15,7 @@ export default {
   name: 'AppNavbar',
   data: function () {
     return {
-      navbarColors: {
-        '/' : "#191E23",
-        '/about' : "#D3D0CB",
-        '/schedule' : "#191E23",
-        '/contact' : "#D3D0CB",
-        '/media': "#D3D0CB",
-        '/performer' : "#D3D0CB",
-        '/athlete' : "#D3D0CB",
-        '/model' : "#D3D0CB",
-      }
+
     }
   }
 };
@@ -35,18 +24,20 @@ export default {
 <style lang="scss" scoped>
 .navigation-container {
   position: absolute;
-  padding: 15px 20px;
-  left: 0;
+  padding: 25px 35px;
+  right: 0;
   top: 0;
   z-index: 10;
+
+  text-align: right;
 }
 
 .nav-menu {
-  text-align: left;
+  text-align: right;
   display: inline-flex;
-  font-family: 'Roboto Condensed Bold', sans-serif;
-  text-transform: uppercase;
-  color: var(--text-color);
+  font-family: 'PGF Now Regular', sans-serif;
+  text-transform: lowercase;
+  color: black;
   position: relative;
 
   li {
@@ -59,24 +50,14 @@ export default {
     text-decoration: none;
 
     &:visited {
-      color: var(--text-color);
+      color: black;
     }
   }
 }
 
-.nav-menu-one {
-  position: absolute;
-}
-
-.nav-menu-two {
-  transform: rotate(-90deg);
-  margin-top: 80px;
-  margin-left: -50px;
-}
-
-.home-icon {
-  font-family: 'Alcantera Script', sans-serif;
-  -webkit-text-stroke: 1px var(--text-color);
-  z-index: 100;
-}
+// .home-icon {
+//   font-family: 'Alcantera Script', sans-serif;
+//   -webkit-text-stroke: 1px var(--text-color);
+//   z-index: 100;
+// }
 </style>

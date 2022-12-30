@@ -1,13 +1,7 @@
 <template>
-  <div class="athlete-page">
-    <div class="athlete-image__wrapper">
-      <div class="video">
-        <iframe width="100%" height="600" src="https://www.youtube.com/embed/IDgolhcyBqE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </div>
-    <p>
-      Abby started playing ultimate in NYC and went on to play with and captain the Oberlin College Preying Manti, who won the 2019 D-III National title (the first athletic national title in Oberlin's history). In the club division, Abby has played with NY BENT and XIST. Abby played on the USA U24 National Women's Team in 2019, and she received the 2020 Donovan Award. She currently plays for Bard College Big Bird. Abby is looking forward to her second season with NY Gridlock in 2022!
-    </p>
+  <div id="box">
+    <p id="slide" ref="slide" :style="{top: slideTop + 'px'}">Some text</p>  <!-- This slideUp when scrolling down -->
+    <div id="static" ref="static" :style="{opacity: staticOpacity}">This box is static</div>
   </div>
 </template>
 
@@ -16,27 +10,54 @@ export default {
   name: 'Athlete',
   data: function () {
     return {
-      //
+      slideTop: '180',
+      staticOpacity: '1',
     }
+  },
+  methods: {
+    handleScroll() {
+      this.slideTop = Math.max(180 - 0.5*window.scrollY, 0);
+      this.staticOpacity = Math.max(1 - 0.004*window.scrollY, 0);
+    }
+  },
+  created () {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  unmounted () {
+    window.removeEventListener('scroll', this.handleScroll);
   },
 }
 </script>
 
 
 <style lang="scss" scoped>
-.athlete-page {
-  padding: 50px 55px;
-  color: $timberwolf;
+p, body {
+  margin:0;
+  padding:0;
+}
+body {
+  height:5000px !important;
+  font-family:sans-serif;
 }
 
-.athlete-image__wrapper {
-  width: 100%;
-  padding-bottom: 20px;
+#slide {
+  color:black;
+  font-weight: 600;
+  font-size: 80px;
+  position:absolute;
+  // top: 180px;
+  left: 40px;
+  z-index: 10;
 }
-
-.athlete-image {
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
+#static {
+  width: 400px;
+  height: 200px;
+  background-color:orange;
+  float: right;
+  margin-top: 150px;
+  margin-right: 80px;
+  color: black;
+  text-align: right;
+  font-size: 12px;
 }
 </style>
