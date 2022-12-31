@@ -1,54 +1,32 @@
 [
   {
-    "title": "Beauty Intolerable",
+    "title": "German Opera Scenes",
+    "subtitle": "Bard Vocal Arts Program",
     "date": {
-      "day": "27",
-      "month": "April",
+      "day": "15",
+      "month": "Dec",
       "year": "2022"
     },
-    "venue": "FDR Library's Wallace Center",
-    "city": "New York",
-    "state": "NY"
+    "venue": "Bard Conservatory Bito Performance Space"
   },
   {
-    "title": "Continuing Evolution: Yiddish Folk Song Today",
+    "title": "Gilbert & Sullivan's <em>Iolanthe</em>",
+    "subtitle": "Bard Vocal Arts Program",
     "date": {
-      "day": "18",
-      "month": "May",
-      "year": "2022"
+      "day": "26",
+      "month": "Feb",
+      "year": "2023"
     },
-    "venue": "YIVO Institute for Jewish Research",
-    "city": "New York",
-    "state": "NY",
-    "link": "https://www.yivo.org/FolksongFestival2"
+    "venue": "Bard Conservatory Fisher Center"
   },
   {
-    "title": "The Final Veil",
+    "title": "Kurtág's <em>Messages of the Late Miss R. V. Troussova</em>",
+    "subtitle": "Bard College Conservatory of Music Kurtág Festival",
     "date": {
-      "day": "14",
-      "month": "July",
-      "year": "2022"
+      "day": "04",
+      "month": "Mar",
+      "year": "2023"
     },
-    "additionaldates": [
-      {
-        "day": "15",
-        "month": "July",
-        "year": "2022"
-      },
-      {
-        "day": "16",
-        "month": "July",
-        "year": "2022"
-      },
-      {
-        "day": "17",
-        "month": "July",
-        "year": "2022"
-      }
-    ],
-    "venue": "Nancy Manocherian's The Cell Theatre",
-    "city": "New York",
-    "state": "NY",
-    "link": "https://www.thefinalveilopera.com/"
+    "venue": "Bard Conservatory Fisher Center"
   }
 ]
