@@ -1,12 +1,12 @@
 <template>
   <div class="model-page">
-    <masonry-wall :items="images" :ssr-columns="1" :column-width="300" :gap="16">
+    <!-- <masonry-wall :items="images" :ssr-columns="1" :column-width="300" :gap="16">
       <template #default="{ item }">
         <div style="height: 100$">
           <img class="masonry-image" :src="require(`@/assets/images/model/${item}`)">
         </div>
       </template>
-    </masonry-wall>
+    </masonry-wall> -->
   </div>
 </template>
 
@@ -16,14 +16,14 @@ export default {
   data: function () {
     return {
       images: [
-        "abby-smoke.png",
-        "model1.jpg",
-        "model2.jpg",
-        "model3.jpg",
-        "model4.jpg",
-        "model5.jpg",
-        "model6.jpg",
-        "model7.jpg"
+        // "abby-smoke.png",
+        // "model1.jpg",
+        // "model2.jpg",
+        // "model3.jpg",
+        // "model4.jpg",
+        // "model5.jpg",
+        // "model6.jpg",
+        // "model7.jpg"
       ]
     }
   },

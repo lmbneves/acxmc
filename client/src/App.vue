@@ -33,15 +33,9 @@ export default {
 }
 
 @font-face {
-  font-family: "PGF Now Regular";
-  src: local("PGFNow-Regular"),
-    url(./fonts/PGFNow-Regular.otf) format("opentype");
-}
-
-@font-face {
-  font-family: "PGF Now Light";
-  src: local("PGFNow-Light"),
-    url(./fonts/PGFNow-Light.otf) format("opentype");
+  font-family: "Display";
+  src: local("Display"),
+    url(./fonts/Display.ttf) format("truetype");
 }
 
 @font-face {

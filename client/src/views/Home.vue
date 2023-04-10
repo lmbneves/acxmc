@@ -1,75 +1,81 @@
 <template>
-  <div class="mainvisual">
-    <div class="main-image">
-      <div class="name-container">
-        <h1 class="name">Abagael Cheng</h1>
+  <div class="home-page">
+    <div class="home-image__wrapper">
+      <img :src="require('@/assets/images/abby-home.jpg')" class="home-image" />
+    </div>
+    <div class="home-text__wrapper">
+      <div class="title">
+        <h3>Abagael</h3>
+        <h1>Cheng</h1>
+      </div>
+      <div>
+        <p class="bio">East Asian American soprano Abagael Cheng is a singing artist who strives to break the 
+        boundaries of traditional performance art and bring social activism to the forefront of her work. 
+        Ms. Cheng sees her role in social justice and performance art to be one and the same: that of a storyteller. 
+        She works towards deepening relationships within and between communities by engaging audiences with 
+        relatable narratives and centering collaboration in her productions.</p>
       </div>
     </div>
   </div>
 </template>
 
+<script>
+export default {
+  name: 'Home',
+  data: function () {
+    return {
+      //
+    }
+  },
+}
+</script>
+
 <style lang="scss" scoped>
-.mainvisual {
+.home-image__wrapper {
   width: 100%;
-  height: 100vh;
-  position: relative;
 }
 
-.main-image {
+.home-image {
   width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 5;
-
-  background-image: url('~@/assets/images/acxmc-mobile.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
+  margin-bottom: -10px;
 }
 
-.name-container {
-  width: 100%;
-  position: absolute;
-  top: 15%;
-  text-align: center;
-}
+.bio {
 
-.name {
-  color: white;
-  font-family: 'Archivo Black';
-  font-size: 50pt;
-  line-height: 45pt;
-  text-transform: uppercase;
 }
 
 @media only screen and (min-width: 768px) {
-  .main-image {
-    width: 100%;
+  .home-image__wrapper {
+    width: 45%;
+    float: left;
+  }
+  .home-image {
     height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 5;
-
-    background-image: url('~@/assets/images/acxmc.png');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100%;
-    background-position: center;
   }
-  .name-container {
+  .home-text__wrapper {
     width: 55%;
-    position: absolute;
-    top: 30%;
-    right: 4%;
-    text-align: right;
+    padding-left: 45%;
   }
-  .name {
-    font-size: 90pt;
-    line-height: 80pt;
+  .title {
+    padding: 100px 0px 0px 120px;
+
+    h1 {
+      font-family: 'Display';
+      font-size: 120pt;
+      margin: 0;
+      margin-top: -50px;
+    }
+    h3 {
+      font-family: 'Display';
+      font-size: 64pt;
+      margin: 0;
+      padding-left: 10px;
+    }
+  }
+  .bio {
+    width: 60%;
+    padding: 60px 130px;
+    line-height: 24pt;
   }
 }
 </style>

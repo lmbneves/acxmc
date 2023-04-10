@@ -5,7 +5,7 @@
       <li><router-link :to="{ path: 'about' }" >About</router-link></li>
       <li><router-link :to="{ path: 'schedule' }">Schedule</router-link></li>
       <li><router-link :to="{ path: 'media' }">Media</router-link></li>
-      <li><router-link :to="{ path: 'contact' }">Connect</router-link></li>
+      <li><router-link :to="{ path: 'contact' }">Contact</router-link></li>
     </ul>
   </div>
 </template>

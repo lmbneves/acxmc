@@ -20,11 +20,7 @@
       traditional performance art and bring social activism to the forefront of her work. Ms. Cheng sees her 
       role in social justice and performance art to be one and the same: that of a storyteller. She works 
       towards deepening relationships within and between communities by engaging audiences with relatable narratives 
-      and centering collaboration in her productions.<br /><br />During the 2021-22 season, she will appear as 
-      Chocholka the Hen and the Blue Dragonfly in Janáček's <em>The Cunning Little Vixen</em>, at Bard College Conservatory of 
-      Music, directed by Doug Fitch. Previous season highlights include a debut as Monica in Menotti's <em>The Medium</em> at 
-      Oberlin Conservatory; performing in Handel's <em>Ariodante</em> as Dalinda, conducted by Miah Im; and taking on the role 
-      of Fraulein Kost in Kandor's <em>Cabaret</em>, directed by Paul&nbsp;Moser.<br /><br />Ms. Cheng curates her own productions 
+      and centering collaboration in her productions.<br /><br />Ms. Cheng curates her own productions 
       as a form of ultimate collaboration in all aspects of the art, combining song and poetry to create unique 
       narratives. This discovery began with her degree recital, <em>Giving her a voice</em>, at Oberlin Conservatory, the 
       purpose of which was to promote and celebrate women composers, featuring only works by Clara Schumann, Alma 

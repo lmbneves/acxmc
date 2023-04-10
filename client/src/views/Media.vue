@@ -12,13 +12,13 @@
         <iframe src="https://www.youtube.com/embed/kAq7bQmjkp0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
-    <masonry-wall :items="images" :ssr-columns="1" :column-width="300" :gap="16">
+    <!-- <masonry-wall :items="images" :ssr-columns="1" :column-width="300" :gap="16">
       <template #default="{ item }">
         <div style="height: 100$">
           <img class="masonry-image" :src="require(`@/assets/images/gallery/${item}`)">
         </div>
       </template>
-    </masonry-wall>
+    </masonry-wall> -->
   </div>
 </div>
 </template>
@@ -29,11 +29,11 @@ export default {
   data: function () {
     return {
       images: [
-        "IMG5786.jpg",
-        "IMG3539.jpg",
-        "gallery1.jpg",
-        "IMG5781.jpg",
-        "IMG5785.jpg",
+        // "IMG5786.jpg",
+        // "IMG3539.jpg",
+        // "gallery1.jpg",
+        // "IMG5781.jpg",
+        // "IMG5785.jpg",
       ]
     }
   },
