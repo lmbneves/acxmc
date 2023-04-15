@@ -76,6 +76,7 @@
   .schedule-image img {
     width: 100%;
     height: 500px;
+    z-index: -1;
     object-fit: cover;
     position: absolute;
     display: none;
@@ -86,7 +87,6 @@
   
     h2 {
       margin: 0;
-      z-index: 10;
   
       font-size: 10vw;
       line-height: 10vw;
@@ -95,7 +95,6 @@
   
     h3 {
       margin: 0;
-      z-index: 10;
   
       font-size: 8vw;
       line-height: 8vw;

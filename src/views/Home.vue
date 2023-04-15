@@ -51,6 +51,8 @@ export default {
   }
   .home-image {
     height: 100%;
+    // object-fit: cover;
+    // object-position: -20% 0;
   }
   .home-text__wrapper {
     width: 55%;
@@ -67,7 +69,7 @@ export default {
     }
     h3 {
       font-family: 'Display';
-      font-size: 64pt;
+      font-size: 80pt;
       margin: 0;
       padding-left: 10px;
     }

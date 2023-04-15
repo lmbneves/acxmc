@@ -91,6 +91,7 @@ $content-base: 13%;
   width: 100%;
   top: $content-base + 10%;
   position: absolute;
+  z-index: -1;
 }
 
 .about-title {
@@ -100,7 +101,6 @@ $content-base: 13%;
     width: 100%;
     position: relative;
     margin: 0;
-    z-index: 10;
 
     font-size: 10vw;
     line-height: 10vw;
@@ -111,7 +111,6 @@ $content-base: 13%;
     width: 100%;
     position: relative;
     margin: 0;
-    z-index: 10;
 
     font-size: 8vw;
     line-height: 8vw;
