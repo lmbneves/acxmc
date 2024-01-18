@@ -1,15 +1,15 @@
 <template>
-  <div class="nav">
+  <div class="nav" :class="navbarColors[$route.path]">
     <ul class="mininav">
-      <li class=""><router-link :to="{ path: 'about' }" >About</router-link></li>
-      <li class=""><router-link :to="{ path: 'media' }" >Media</router-link></li>
+      <li class=""><router-link :to="{ path: 'about' }">About</router-link></li>
+      <li class=""><router-link :to="{ path: 'media' }">Media</router-link></li>
     </ul>
     <ul class="mininav" id="logo">
       <li><router-link :to="{ path: '/' }" >AC</router-link></li>
     </ul>
     <ul class="mininav" id="nav2">
-      <li class=""><router-link :to="{ path: 'schedule' }" >Schedule</router-link></li>
-      <li class=""><router-link :to="{ path: 'contact' }" >Contact</router-link></li>
+      <li class=""><router-link :to="{ path: 'schedule' }">Schedule</router-link></li>
+      <li class=""><router-link :to="{ path: 'contact' }">Contact</router-link></li>
     </ul>
   </div>
 </template>
@@ -18,6 +18,15 @@
 export default {
   name: 'AppNavbar',
   data: function () {
+    return {
+      navbarColors: {
+        '/': 'navbarLight',
+        '/about': 'navbarDark',
+        '/media': 'navbarDark',
+        '/schedule': 'navbarDark',
+        '/contact': 'navbarDark',
+      }
+    }
   }
 };
 </script>
@@ -32,17 +41,21 @@ $transition--length: .8;
 
 .nav {
   width: 100%;
-  height: 60px;
-  position: absolute;
+  height: 0;
+  position: relative;
+  z-index: 10;
   display: flex;
   justify-content: space-between;
   font-family: $font--primary;
   text-transform: uppercase;
-  z-index: 10;
 }
-
+.navbarLight a, .navbarLight a:visited {
+  color: #fff;
+}
+.navbarDark a, .navbarDark a:visited {
+  color: $shark-blue;
+}
 .mininav {
-  color: white;
   display: inline-block;
   
   li {
@@ -52,12 +65,10 @@ $transition--length: .8;
 
   a {
     text-decoration: none;
-    color: white;
   }
 }
 
 #logo {
-  font-family: 'Display', 'sans-serif';
-  font-size: 18pt;
+  font-family: "Alcantera Script";
 }
 </style>
