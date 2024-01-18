@@ -32,13 +32,13 @@ $transition--length: .8;
 
 .nav {
   width: 100%;
-  height: 0;
-  position: relative;
-  z-index: 10;
+  height: 60px;
+  position: absolute;
   display: flex;
   justify-content: space-between;
   font-family: $font--primary;
   text-transform: uppercase;
+  z-index: 10;
 }
 
 .mininav {
@@ -52,11 +52,12 @@ $transition--length: .8;
 
   a {
     text-decoration: none;
-    color: $shark-blue;
+    color: white;
   }
 }
 
 #logo {
-  font-family: "Alcantera Script";
+  font-family: 'Display', 'sans-serif';
+  font-size: 18pt;
 }
 </style>

@@ -1,20 +1,12 @@
 <template>
-  <div class="home-page">
-    <div class="home-image__wrapper">
-      <img :src="require('@/assets/images/abby-home.jpg')" class="home-image" />
-    </div>
-    <div class="home-text__wrapper">
-      <div class="title">
-        <h3>Abagael</h3>
-        <h1>Cheng</h1>
-      </div>
-      <div>
-        <p class="bio">East Asian American soprano Abagael Cheng is a singing artist who strives to break the 
-        boundaries of traditional performance art and bring social activism to the forefront of her work. 
-        Ms. Cheng sees her role in social justice and performance art to be one and the same: that of a storyteller. 
-        She works towards deepening relationships within and between communities by engaging audiences with 
-        relatable narratives and centering collaboration in her productions.</p>
-      </div>
+  <div class="home__container">
+    <div class="titles">
+      <h1>Abagael Cheng</h1>
+      <div class="subtitles">
+        <h3>Artist</h3>
+        <h3>Athlete</h3>
+        <h3>Activist</h3>
+      </div>  
     </div>
   </div>
 </template>
@@ -31,53 +23,42 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.home-image__wrapper {
+.home__container {
   width: 100%;
+  height: 100vh;
+  background: url("~@/assets/images/acxmc.png");
+  background-size: 105%;
+  background-position: top right;
+  position: relative;
 }
-
-.home-image {
+.titles {
   width: 100%;
-  margin-bottom: -10px;
+  height: 30vh;
+  position: absolute;
+  display: inline;
+  align-items: end;
+  text-align: center;
+  bottom: 0;
+
+  h1 {
+    color: white;
+    font-size: 64pt;
+    font-family: 'Display', 'sans-serif';
+    width: 100%;
+  }
 }
-
-.bio {
-
+.subtitles {
+  h3 { 
+    color: white;
+    display: inline;
+    font-size: 14pt;
+    text-transform: uppercase;
+    padding: 0px 20px;
+    width: 100%;
+  }
 }
 
 @media only screen and (min-width: 768px) {
-  .home-image__wrapper {
-    width: 45%;
-    float: left;
-  }
-  .home-image {
-    height: 100%;
-    // object-fit: cover;
-    // object-position: -20% 0;
-  }
-  .home-text__wrapper {
-    width: 55%;
-    padding-left: 45%;
-  }
-  .title {
-    padding: 100px 0px 0px 120px;
 
-    h1 {
-      font-family: 'Display';
-      font-size: 120pt;
-      margin: 0;
-      margin-top: -50px;
-    }
-    h3 {
-      font-family: 'Display';
-      font-size: 80pt;
-      margin: 0;
-      padding-left: 10px;
-    }
-  }
-  .bio {
-    width: 60%;
-    padding: 60px 130px;
-    line-height: 24pt;
-  }
 }
 </style>
