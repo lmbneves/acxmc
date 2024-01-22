@@ -5,48 +5,27 @@
   </div>
   <div class="media-container"> 
     <div class="video-container">
-      <div class="video">
-        <iframe src="https://www.youtube.com/embed/CrStLawvTU0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <p><i>L'accordéoniste</i> by Michel Emer</p>
-      </div>
-      <div class="video">
-        <iframe src="https://www.youtube.com/embed/ytYAhwyslQo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <p><i>Saying goodbye</i> by Tom Cipullo</p>
-      </div>
-    </div>
-    <div class="video-container">
-      <div class="video">
-        <iframe src="https://www.youtube.com/embed/-FNKeLj_Q9k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <p><i>Non, la fidélité</i> by Germaine Tailleferre</p>
-      </div>
-      <div class="video">
-        <iframe src="https://www.youtube.com/embed/ccyQLxczcW4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <p><i>Lied</i> by Isabel Mundry</p>
+      <div 
+        v-for="(video, index) of videos"
+        :key="index"
+        class="video" 
+      >
+        <iframe :src="video.src" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p><i>{{ video.title }}</i> {{ video.method }} {{ video.composer }}</p>
       </div>
     </div>
-    <!-- <masonry-wall :items="images" :ssr-columns="1" :column-width="300" :gap="16">
-      <template #default="{ item }">
-        <div style="height: 100$">
-          <img class="masonry-image" :src="require(`@/assets/images/gallery/${item}`)">
-        </div>
-      </template>
-    </masonry-wall> -->
   </div>
 </div>
 </template>
 
 <script>
+import videos from '../data/videos.json'
+
 export default {
   name: 'Media',
   data: function () {
     return {
-      images: [
-        // "IMG5786.jpg",
-        // "IMG3539.jpg",
-        // "gallery1.jpg",
-        // "IMG5781.jpg",
-        // "IMG5785.jpg",
-      ]
+      videos: videos
     }
   },
 }
@@ -66,7 +45,7 @@ export default {
   width: 100%;
   height: 500px;
   object-fit: cover;
-  object-position: top center;
+  object-position: center;
 }
 .media-container {
   padding: 30px;
@@ -75,15 +54,10 @@ export default {
 .video-container {
   .video {
     iframe {
-      width: 98%;
-      min-height: 320px;
+      width: 100%;
+      min-height: 340px;
     }
   }
-}
-
-.masonry-image {
-  width: 300px;
-  padding-bottom: 5px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -96,13 +70,16 @@ export default {
   }
   .video-container {
   display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 
   .video {
-    flex: 1;
+    flex: 35%;
+    width: 100%;
 
     iframe {
-      width: 98%;
-      min-height: 320px;
+      width: 100%;
+      min-height: 340px;
     }
   }
 }
